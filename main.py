@@ -12,18 +12,23 @@ def reversing_numeric(num):
     return str(num)[::-1]
 
 def finding_nextPalindrome(num):
-    pass
+
+    num += 1
+    while True:
+        if str(num) == str(num)[::-1]:
+            break
+        num += 1
+    return num
 
 def next_palindrome(list, n):
     for i in range(n):
         num = (list[i])
         reversed_num = int(reversing_numeric(num))
-        print(reversed_num)
         if reversed_num == list[i]:
             print(f"{num} is palindrome.")
         else:
 
-            print(f"{num} not palindrome. The next palindrome of {num} is : ")
+            print(f"{num} not palindrome. The next palindrome of {num} is : {finding_nextPalindrome(num)}")
 
 
 if __name__ == '__main__':
